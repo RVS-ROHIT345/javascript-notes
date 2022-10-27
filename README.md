@@ -1,2 +1,2 @@
 # javascript-notes
-all the topic studies in js
+All the topic studies in js
