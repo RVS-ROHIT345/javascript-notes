@@ -21,7 +21,7 @@ const searchText = {
 
 const renderFunction = function(todo, text){
     const matchedElement = todo.filter(function(item,index){
-        return item.title.toLowerCase().includes(text.toLowerCase());
+        return item.title.toLowerCase().includes(text.toLowerCase()) && !item.status;
     })
 
     document.querySelector('#display_content').innerHTML = ''
