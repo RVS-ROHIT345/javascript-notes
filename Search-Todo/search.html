@@ -8,6 +8,18 @@
         <h1>Search Todo App</h1>
         <input id="todo" type="text" placeholder="search your todo">
         <div id="display_content"></div>
+        <h2>Add the todo here!!</h2>
+        <form id="todo_form">
+            <label for="todo_label">Enter the todo:</label>
+            <input type="text" id="todo_label" placeholder="enter the todo" name="todoTitle"/>
+            <label for="todo_status">Status:</label>
+            <select id="todo_status" name="todoStatus">
+                <option value="">enter the status</option>
+                <option value="false">false</option>
+                <option value="true">true</option>
+            </select>
+            <button type="submit">Add todo</button>
+        </form>
         <script src="search.js"></script>
     </body>
 </html>
