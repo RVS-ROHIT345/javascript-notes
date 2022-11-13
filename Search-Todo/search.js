@@ -75,3 +75,25 @@ document.querySelector('#todo_completed').addEventListener('change', function(e)
         renderFunction(Todo, searchText.searchText)
     }
 })
+
+/*Local storage CURD operation 
+    local storage only store string values, if you have a object you need to convert it to string
+
+    1> to create the element in the local storage
+        command localStorage.setItem('key','value')
+
+    2> to read the value in the local storage
+        command localStorage.getItem('key')
+    3> to update the value of localStorage use the 1st command with different value
+    4> to delete the element in the local storage
+        command localStorage.removeItem()
+                localStorage.remove()
+                localStorage.clear()
+*/
+
+// localStorage.setItem('passion','coding')
+localStorage.setItem('passion','dancing')
+localStorage.clear()
+// localStorage.removeItem('passion')
+console.log(localStorage.getItem('passion'))
+// localStorage.removeItem('passion')
