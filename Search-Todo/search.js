@@ -64,14 +64,14 @@ document.querySelector('#todo_form').addEventListener('submit', function (e) {
     4> setup renderTodos to remove completed items
 */
 
-document.querySelector('#todo_completed').addEventListener('change', function(e) {
-    if(e.target.checked){
-        const hideCompleted = Todo.filter(function(item1,index){
+document.querySelector('#todo_completed').addEventListener('change', function (e) {
+    if (e.target.checked) {
+        const hideCompleted = Todo.filter(function (item1, index) {
             return !item1.status
         })
         renderFunction(hideCompleted, searchText.searchText)
     }
-    else{
+    else {
         renderFunction(Todo, searchText.searchText)
     }
 })
@@ -92,8 +92,27 @@ document.querySelector('#todo_completed').addEventListener('change', function(e)
 */
 
 // localStorage.setItem('passion','coding')
-localStorage.setItem('passion','dancing')
+localStorage.setItem('passion', 'dancing')
 localStorage.clear()
 // localStorage.removeItem('passion')
 console.log(localStorage.getItem('passion'))
+
 // localStorage.removeItem('passion')
+/* if you want to store the object to the local storage need to use two methods
+    1> use global object JSON[javascript object notation]
+    2> as the local storage only accept string value need to use JSON.stringify(object name you want to convert) and it return 
+    a new string which is in object format. Then create the element using localStorage.setItem(enter the variable which has string 
+        representation of object.)
+    3> if you want to use the string value from local storage into the object format use JSON.parse(enter the string value that you get
+        from localStorage.getItem())
+    
+*/
+const user = {
+    name: "samson",
+    age: 36,
+}
+const userString = JSON.stringify(user)
+localStorage.setItem('user', userString);
+const userData = localStorage.getItem('user')
+const userObj = JSON.parse(userData)
+console.log(`Hi! i am ${userObj.name} and age is ${userObj.age}`)
