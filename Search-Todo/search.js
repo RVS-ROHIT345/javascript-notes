@@ -23,7 +23,8 @@ const renderFunction = function (todo, text) {
     const matchedElement = todo.filter(function (item, index) {
         return item.title.toLowerCase().includes(text.toLowerCase());
     })
-
+    /*debugger key word is used to debug the error and checking if the data is coming as we wanted */
+    debugger
     document.querySelector('#display_content').innerHTML = ''
     matchedElement.forEach(function (todos, index) {
         const contentBlock = document.createElement('div')
