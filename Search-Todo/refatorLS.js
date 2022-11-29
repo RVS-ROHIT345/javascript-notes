@@ -40,13 +40,31 @@ const renderFunction = function (todo, text) {
 
     document.querySelector('#display_content').innerHTML = ''
     matchedElement.forEach(function (todos, index) {
-        const elementTodo = generatedContent(todos)
+        const elementTodo = generateTodoDOM(todos)
         document.querySelector('#display_content').appendChild(elementTodo)
     })
 }
 // 4
-const generatedContent = (taskItem)=> {
-    const contentBlock = document.createElement('div')
+/* advance dom rendering challenge 
+    1>setup a root div
+    2>setup and append checkbox(set type attribute)
+    3>setup and append span(set text value)
+    4>setup and append button(set text 'delete task')
+*/
+const generateTodoDOM = (taskItem)=> {
+    const containerBlock = document.createElement('div')
+    const checkbox = document.createElement('input')
+    const contentBlock = document.createElement('span')
+    const deleteButton = document.createElement('button')
+    // setup of the checkbox
+    checkbox.setAttribute('type', 'checkbox')
+    containerBlock.appendChild(checkbox)
+    // setup of the span textContent
     contentBlock.textContent = taskItem.title
-    return contentBlock
+    containerBlock.appendChild(contentBlock)
+    // setup of the button and it's content
+    deleteButton.textContent = 'Delete Task'
+    containerBlock.appendChild(deleteButton)
+    
+    return containerBlock
 }
